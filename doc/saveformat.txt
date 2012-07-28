@@ -1,0 +1,9 @@
+coords: "x:y", 6:1 is top left
+directions: f0=left f1=up f2=right f3=down
+writers: b r g y
+branches: p q <directions>, flipped: f4=left f5=up f6=right f7=down
+belts: c <directions>
+crossed belts: i f0=up+left f1=down+left f2=left+up f3=right+up f4=up+right f5=down+right f6=left+down f7=right+down
+
+type coords direction; ...
+
