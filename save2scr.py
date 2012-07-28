@@ -33,11 +33,11 @@ def save2scr(slots):
 			args = [t.upper(), next_coord(slots, p, d)]
 			labels[ps] = (cmd, args)
 		elif t in 'pq':
-			cmd = dict(p='jrb', q='jyg')[t]
+			cmd = dict(p='jrb', q='jgy')[t]
 			d3 = d % 4
 			d1 = (d - 1) % 4
 			d2 = (d + 1) % 4
-			if (d >= 4) != (t == 'q'): # bool != bool => xor; XXX: hack for jyg (vs. jgy)
+			if d >= 4:
 				d1, d2 = d2, d1
 			labels[ps] = (cmd, [next_coord(slots, p, d1), next_coord(slots, p, d2), next_coord(slots, p, d3)])
 		elif t == 'c':

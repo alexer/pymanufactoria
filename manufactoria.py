@@ -1,6 +1,6 @@
 
-_cmds = set('j jrb jyg w'.split())
-_argc = dict(j=1, jrb=2, jyg=2, w=2)
+_cmds = set('j jrb jgy w'.split())
+_argc = dict(j=1, jrb=2, jgy=2, w=2)
 
 def parse_code(lines):
 	labels = {}
@@ -20,7 +20,7 @@ def parse_code(lines):
 		if cmd == 'w':
 			assert args[0].replace('R', '').replace('B', '').replace('Y', '').replace('G', '') == ''
 
-		if cmd in 'jrb jyg'.split() and len(args) == 2:
+		if cmd in 'jrb jgy'.split() and len(args) == 2:
 			args.append('REJECT')
 
 		labels[label] = (cmd, args)
@@ -62,7 +62,7 @@ def simulate(labels, data):
 		if not inplace: print(ptr, cmd, *args)
 		if cmd == 'j':
 			ptr = args[0]
-		elif cmd in 'jrb jyg'.split():
+		elif cmd in 'jrb jgy'.split():
 			check = cmd[1:].upper()
 			try:
 				item = tape[0]

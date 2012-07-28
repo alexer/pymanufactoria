@@ -2,11 +2,11 @@
 Empty lines are ignored.
 Every line has the format "label cmd args".
 Execution is started on first line.
-Commands are j, jrb, jyg, and w.
+Commands are j, jrb, jgy, and w.
 - j TARGET:
   * continue execution at label TARGET
 - jrb RED BLUE [OTHER]:
-- jyg YELLOW GREEN [OTHER]:
+- jgy GREEN YELLOW [OTHER]:
   * read tape, continue execution at label <COLOR> or OTHER depending on if a <color> or a different symbol was read
   * OTHER defaults to REJECT
 - w COLORS TARGET:
