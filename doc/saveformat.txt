@@ -1,9 +1,20 @@
-coords: "x:y", 6:1 is top left
-directions: f0=left f1=up f2=right f3=down
-writers: b r g y
-branches: p q <directions>, flipped: f4=left f5=up f6=right f7=down
-belts: c <directions>
-crossed belts: i f0=up+left f1=down+left f2=left+up f3=right+up f4=up+right f5=down+right f6=left+down f7=right+down
-
-type coords direction; ...
+Save data contains components separated by a semicolon.
+Components have the format "TX:YfD", where:
+- T = component type
+- X and Y = component coordinates
+- D = component orientation
+Coordinates start from x=6,y=1 at the top left corner. (on a large field)
+Entry is at 12:1, starting position at 12:2 and exit at 12:13.
+Component types are:
+- b, r, g and y: writers for blue, red, green and yellow, respectively
+- p and q: branches for red-blue and green-yellow, respectively
+- c and i: belts, single and bridged, respectively
+Basic directions are:
+- 0=left 1=up 2=right 3=down
+For branches, the "other" branch points to the orientation of the component,
+"red" and "green" are to the left and "blue" and "yellow" to the right.
+These can also be flipped, in which case the directions are:
+- 4=left 5=up 6=right 7=down
+Directions for crossed belts are: (first one visually on the bottom and second one on the top)
+- 0=up+left 1=down+left 2=left+up 3=right+up 4=up+right 5=down+right 6=left+down 7=right+down
 
